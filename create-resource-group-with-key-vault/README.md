@@ -3,14 +3,10 @@
 This folder contains the Terraform Code for creating a new Azure Resource Group.
 
 ## Files Included
-1. main.tf : This file contains the executable code fetching the secrets from Azure Key Vault using custom KeyVault API
+1. main.tf : This file contains the executable code fetching the secrets from Azure Key Vault using custom KeyVault API and passing them dynamically to the Azure Terraform provider for initialization
 2. variables.tf : This file contains all the variables that will be used by the Terraform code in main.tf
 3. outputs.tf : This file will contain all the outputs that are desired from the Terraform execution
 4. testVal.tfvars : This is an optional file required only for local executions and provides the values for all variables required by main Terraform code
-5. rg-provision Modules Folder: This folder containes the module defined for provisioning a resource group. This module will be invoked in main.tf and will use the dynamic values fetched during main execution
-    a. rg_provision.tf : This file is the main executable Terraform Code that provisions resource group
-    b. rg_variable.tf : This file contains variables used by the Terraform code in rg_provision.tf
-    c. rg_output.tf: This file contains the outputs
 
 ## Terraform Initialize
 The terraform init command is used to initialize a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. For this particular piece, the initialization is important as we have a custom module that needs to be readied for execution
